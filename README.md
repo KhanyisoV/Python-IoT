@@ -1,6 +1,6 @@
-#Facility Monitoring Server
+# Facility Monitoring Server
 A multi-threaded Python server application for real-time facility occupancy monitoring and activity logging. This system tracks personnel entry/exit events and maintains comprehensive logs of all facility activities.
-##Overview
+## Overview
 This server application manages connected IoT devices (entry systems, safety systems) to monitor facility occupancy in real-time. It uses socket programming and multi-threading to handle multiple device connections simultaneously, logging all events with timestamps.
 Features
 
@@ -10,7 +10,7 @@ Activity Logging: Records all events with timestamps to activity_log.txt
 Emergency Protocol: Automatic evacuation count reset when safety system is activated
 Thread-safe Operations: Uses locks to prevent race conditions on shared resources
 
-#Requirements
+# Requirements
 
 Python 3.x
 Standard library modules:
@@ -21,7 +21,7 @@ datetime
 
 
 
-###Configuration
+### Configuration
 The server is configured with the following default settings:
 pythonSERVER_IP = '127.0.0.1'
 SERVER_PORT = 12345
@@ -67,13 +67,13 @@ Main Thread: Runs the connection listener
 Connection Handler Thread: Accepts new device connections
 Device Handler Threads: One thread per connected device for message processing
 
-##Thread Safety
+## Thread Safety
 The application uses:
 
 threading.Lock() to protect the connected_devices list from concurrent modification
 Thread-safe file writing with context managers
 
-#Functions
+# Functions
 record_activity(activity_message)
 Logs an activity with timestamp and current occupancy to both console and file.
 handle_device_connection(device_socket, device_address)
@@ -85,14 +85,14 @@ Error Handling
 Connection Reset: Gracefully handles device disconnections and logs the event
 Socket Cleanup: Properly closes sockets and removes them from the connected devices list
 
-##Student Information
+## Student Information
 Student ID: s224252941
 Name: Khanyiso Vabaza
 License
 This project is developed for educational purposes.
 Future Enhancements
 
-##Add authentication for connected devices
+## Add authentication for connected devices
 Implement maximum occupancy alerts
 Create a web dashboard for real-time monitoring
 Add database support for historical data analysis
